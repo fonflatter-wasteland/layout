@@ -1,0 +1,28 @@
+{
+  "name": "fonflatter-layout",
+  "version": "1.0.0",
+  "description": "layout of the new fonflatter.de",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fonflatter/layout.git"
+  },
+  "author": "winniehell",
+  "license": "CC-BY-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/fonflatter/layout/issues"
+  },
+  "homepage": "https://github.com/fonflatter/layout",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-bower-concat": "^0.4.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-wiredep": "^2.0.0",
+    "wiredep": "^2.2.2"
+  }
+}
