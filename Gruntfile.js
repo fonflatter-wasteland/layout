@@ -1,5 +1,14 @@
 module.exports = function (grunt) {
 
+    var globalConfig = {
+        images: 'images',
+        css: 'css',
+        fonts: 'fonts',
+        scripts: 'js',
+        bower_path: 'bower_components'
+    };
+
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -7,10 +16,23 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        globalConfig: globalConfig,
+        copy: {
+            main: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'bower_components/bootstrap-sass-official/assets/fonts/',
+                        src: ['**'],
+                        dest: 'fonts/'
+                    }
+                ]
+            }
+        },
         cssmin: {
             minify: {
                 files: {
-                    'css/<%= pkg.name %>.min.css': 'css/<%= pkg.name %>.css'
+                    '<%= globalConfig.css %>/<%= pkg.name %>.min.css': '<%= globalConfig.css %>/<%= pkg.name %>.css'
                 }
             }
         },
@@ -22,7 +44,7 @@ module.exports = function (grunt) {
                     sourcemap: 'none'
                 },
                 files: {
-                    'css/<%= pkg.name %>.css': 'css/<%= pkg.name %>.scss'
+                    '<%= globalConfig.css %>/<%= pkg.name %>.css': '<%= globalConfig.css %>/<%= pkg.name %>.scss'
                 }
             }
         },
@@ -33,16 +55,16 @@ module.exports = function (grunt) {
             },
             build: {
                 files: {
-                    'js/<%= pkg.name %>.min.js': require('wiredep')().js
+                    '<%= globalConfig.scripts %>/<%= pkg.name %>.min.js': require('wiredep')().js
                 }
             }
         },
         wiredep: {
             target: {
-                src: 'css/<%= pkg.name %>.scss'
+                src: '<%= globalConfig.css %>/<%= pkg.name %>.scss'
             }
         }
     });
 
-    grunt.registerTask('default', ['wiredep', 'sass', 'uglify', 'cssmin']);
+    grunt.registerTask('default', ['copy', 'wiredep', 'sass', 'uglify', 'cssmin']);
 };
