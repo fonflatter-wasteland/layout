@@ -1,3 +1,66 @@
 // bower:scss
 @import "../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
+
+a {
+    color: $text-color;
+}
+
+body {
+    padding-bottom: $navbar-height;
+}
+
+.navbar-fixed-bottom .navbar-right {
+    padding-right: 1rem;
+}
+
+#comic img {
+    height: auto;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+#comic, #comments {
+    margin-top: 4rem;
+}
+
+#license {
+    max-height: 1em;
+}
+
+#license img {
+    height: 2em;
+    opacity: 0.6;
+}
+
+#license a:hover img {
+    opacity: 1;
+}
+
+#menu_archive {
+    border: none;
+    box-shadow: none;
+    margin-left: 10%;
+    margin-top: 2em;
+    width: 90%;
+}
+
+#menu_archive h4 {
+    margin: 0;
+}
+
+#menu_archive .btn, #menu_archive .btn-group, #menu_archive .btn-group-vertical {
+    width: 100%;
+}
+
+#menu_archive .btn-group, #menu_archive .btn-group-vertical {
+    margin-bottom: 1px;
+}
+
+#menu_archive .btn-group .btn {
+    background-color: #f8f8f8;
+}
+
+#menu_archive .panel-body {
+    padding: 0;
+}
