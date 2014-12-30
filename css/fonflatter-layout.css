@@ -8151,69 +8151,74 @@ a {
 
 /* line 9, fonflatter-layout.scss */
 body {
-  padding-bottom: 50px;
+  bottom: 55px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
-/* line 13, fonflatter-layout.scss */
+/* line 17, fonflatter-layout.scss */
 img {
   max-width: 100%;
 }
 
-/* line 17, fonflatter-layout.scss */
-.navbar-fixed-bottom .navbar-right {
-  padding-right: 3rem;
+/* line 21, fonflatter-layout.scss */
+.container-fluid {
+  height: 100%;
+  overflow: auto;
 }
 
-/* line 21, fonflatter-layout.scss */
+/* line 26, fonflatter-layout.scss */
 .navbar-right > li > a {
   padding-left: 5px;
   padding-right: 5px;
   padding-top: 10px;
 }
 
-/* line 27, fonflatter-layout.scss */
+/* line 32, fonflatter-layout.scss */
 a.svg-icon > .on,
 a:hover.svg-icon > .off {
   display: none;
 }
 
-/* line 32, fonflatter-layout.scss */
+/* line 37, fonflatter-layout.scss */
 a.svg-icon > .off,
 a:hover.svg-icon > .on {
   display: inline;
 }
 
-/* line 37, fonflatter-layout.scss */
+/* line 42, fonflatter-layout.scss */
 a.svg-icon {
   max-height: 1rem;
 }
 
-/* line 41, fonflatter-layout.scss */
+/* line 46, fonflatter-layout.scss */
 a.svg-icon img {
   height: 2rem;
 }
 
-/* line 45, fonflatter-layout.scss */
+/* line 50, fonflatter-layout.scss */
 #comic_header, #comic {
   margin-bottom: 1rem;
 }
 
-/* line 49, fonflatter-layout.scss */
+/* line 54, fonflatter-layout.scss */
 #comic_footer {
   margin-bottom: 4rem;
 }
 
-/* line 53, fonflatter-layout.scss */
+/* line 58, fonflatter-layout.scss */
 #license > a > img {
   opacity: 0.6;
 }
 
-/* line 57, fonflatter-layout.scss */
+/* line 62, fonflatter-layout.scss */
 #license > a:hover > img {
   opacity: 1;
 }
 
-/* line 61, fonflatter-layout.scss */
+/* line 66, fonflatter-layout.scss */
 #menu_archive {
   border: none;
   box-shadow: none;
@@ -8221,32 +8226,42 @@ a.svg-icon img {
   width: 90%;
 }
 
-/* line 68, fonflatter-layout.scss */
+/* line 73, fonflatter-layout.scss */
 #menu_archive h4 {
   margin: 0;
 }
 
-/* line 72, fonflatter-layout.scss */
+/* line 77, fonflatter-layout.scss */
 #menu_archive .btn, #menu_archive .btn-group, #menu_archive .btn-group-vertical {
   width: 100%;
 }
 
-/* line 76, fonflatter-layout.scss */
+/* line 81, fonflatter-layout.scss */
 #menu_archive .btn-group, #menu_archive .btn-group-vertical {
   margin-bottom: 1px;
 }
 
-/* line 80, fonflatter-layout.scss */
+/* line 85, fonflatter-layout.scss */
 #menu_archive .btn-group .btn {
   background-color: #f8f8f8;
 }
 
-/* line 84, fonflatter-layout.scss */
+/* line 89, fonflatter-layout.scss */
 #menu_archive .panel-body {
   padding: 0;
 }
 
-/* line 88, fonflatter-layout.scss */
+/* line 93, fonflatter-layout.scss */
+#page_footer {
+  margin-bottom: 0;
+}
+
+/* line 97, fonflatter-layout.scss */
+#page_footer .navbar-right {
+  margin-right: 0;
+}
+
+/* line 101, fonflatter-layout.scss */
 #search_form input {
   width: 10rem;
 }

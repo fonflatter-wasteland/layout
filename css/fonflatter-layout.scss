@@ -7,15 +7,20 @@ a {
 }
 
 body {
-    padding-bottom: $navbar-height;
+    bottom: ($navbar-height + $padding-small-vertical);
+    left:0;
+    position:absolute;
+    right:0;
+    top:0;
 }
 
 img {
     max-width: 100%;
 }
 
-.navbar-fixed-bottom .navbar-right {
-    padding-right: 3rem;
+.container-fluid {
+    height: 100%;
+    overflow: auto;
 }
 
 .navbar-right > li > a {
@@ -83,6 +88,14 @@ a.svg-icon img {
 
 #menu_archive .panel-body {
     padding: 0;
+}
+
+#page_footer {
+    margin-bottom: 0;
+}
+
+#page_footer .navbar-right {
+    margin-right: 0;
 }
 
 #search_form input {
