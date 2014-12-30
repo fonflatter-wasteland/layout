@@ -8155,68 +8155,98 @@ body {
 }
 
 /* line 13, fonflatter-layout.scss */
-.navbar-fixed-bottom .navbar-right {
-  padding-right: 1rem;
+img {
+  max-width: 100%;
 }
 
 /* line 17, fonflatter-layout.scss */
-#comic img {
-  height: auto;
-  margin-bottom: 1rem;
-  width: 100%;
+.navbar-fixed-bottom .navbar-right {
+  padding-right: 3rem;
 }
 
-/* line 23, fonflatter-layout.scss */
-#comic, #comments {
-  margin-top: 4rem;
+/* line 21, fonflatter-layout.scss */
+.navbar-right > li > a {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 10px;
 }
 
 /* line 27, fonflatter-layout.scss */
-#license {
-  max-height: 1em;
+a.svg-icon > .on,
+a:hover.svg-icon > .off {
+  display: none;
 }
 
-/* line 31, fonflatter-layout.scss */
-#license img {
-  height: 2em;
+/* line 32, fonflatter-layout.scss */
+a.svg-icon > .off,
+a:hover.svg-icon > .on {
+  display: inline;
+}
+
+/* line 37, fonflatter-layout.scss */
+a.svg-icon {
+  max-height: 1rem;
+}
+
+/* line 41, fonflatter-layout.scss */
+a.svg-icon img {
+  height: 2rem;
+}
+
+/* line 45, fonflatter-layout.scss */
+#comic_header, #comic {
+  margin-bottom: 1rem;
+}
+
+/* line 49, fonflatter-layout.scss */
+#comic_footer {
+  margin-bottom: 4rem;
+}
+
+/* line 53, fonflatter-layout.scss */
+#license > a > img {
   opacity: 0.6;
 }
 
-/* line 36, fonflatter-layout.scss */
-#license a:hover img {
+/* line 57, fonflatter-layout.scss */
+#license > a:hover > img {
   opacity: 1;
 }
 
-/* line 40, fonflatter-layout.scss */
+/* line 61, fonflatter-layout.scss */
 #menu_archive {
   border: none;
   box-shadow: none;
   margin-left: 10%;
-  margin-top: 2em;
   width: 90%;
 }
 
-/* line 48, fonflatter-layout.scss */
+/* line 68, fonflatter-layout.scss */
 #menu_archive h4 {
   margin: 0;
 }
 
-/* line 52, fonflatter-layout.scss */
+/* line 72, fonflatter-layout.scss */
 #menu_archive .btn, #menu_archive .btn-group, #menu_archive .btn-group-vertical {
   width: 100%;
 }
 
-/* line 56, fonflatter-layout.scss */
+/* line 76, fonflatter-layout.scss */
 #menu_archive .btn-group, #menu_archive .btn-group-vertical {
   margin-bottom: 1px;
 }
 
-/* line 60, fonflatter-layout.scss */
+/* line 80, fonflatter-layout.scss */
 #menu_archive .btn-group .btn {
   background-color: #f8f8f8;
 }
 
-/* line 64, fonflatter-layout.scss */
+/* line 84, fonflatter-layout.scss */
 #menu_archive .panel-body {
   padding: 0;
+}
+
+/* line 88, fonflatter-layout.scss */
+#search_form input {
+  width: 10rem;
 }

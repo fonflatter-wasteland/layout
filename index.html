@@ -8,18 +8,29 @@
 <body>
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="page-header col-md-offset-4 col-md-4">
-            <h1>
-                <small>fledermaus fürst frederick</small>
-                fon&nbsp;flatter
-            </h1>
+    <h1 class="page-header text-center">
+        <small>fledermaus fürst frederick</small>
+        fon&nbsp;flatter
+    </h1>
+
+    <div id="comic_header" class="row">
+        <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
+            <nav>
+                <ul class="pager small">
+                    <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> #3275: Schild</a></li>
+                    <li class="next"><a href="#">#3277: Schild III <span aria-hidden="true">&rarr;</span></a></li>
+                </ul>
+            </nav>
+
+            <h3 class="text-center">
+                <a href="#">#3276: Schild II</a>
+                <small>08.09.2014</small>
+            </h3>
         </div>
     </div>
 
     <div class="row">
-
-        <div id="sidebar_left" class="col-md-offset-1 col-md-2 hidden-xs">
+        <div class="col-md-offset-1 col-md-2 col-sm-offset-0 col-sm-2 hidden-xs">
             <div id="menu_archive" class="panel">
 
                 <h4 class="btn-group">
@@ -245,22 +256,13 @@
             </div>
         </div>
 
-        <div class="col-md-offset-1 col-md-4">
-            <nav>
-                <ul class="pager small">
-                    <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> #3275: Schild</a></li>
-                    <li class="next"><a href="#">#3277: Schild III <span aria-hidden="true">&rarr;</span></a></li>
-                </ul>
-            </nav>
+        <div class="col-md-offset-0 col-md-6 col-sm-offset-0 col-sm-8 col-xs-offset-0 col-xs-12">
 
             <div id="comic" class="text-center">
-                <h3 class="title">
-                    <a href="#">#3276: Schild II</a>
-                    <small>08.09.2014</small>
-                </h3>
-
                 <img src="http://www.fonflatter.de/2014/fred_2014-09-08.png" alt="Comic">
+            </div>
 
+            <div id="comic_footer" class="text-center">
                 <p>Heute ist <strong>Muscheltag</strong>.</p>
 
                 <div class="btn-group" role="group">
@@ -315,8 +317,8 @@
                         <input type="text" class="form-control" id="website" placeholder="optional">
                     </div>
                     <div class="form-group">
-                        <label for="content">Kommentar</label><br>
-                        <textarea id="content"></textarea>
+                        <label for="comment-content">Kommentar</label><br>
+                        <textarea id="comment-content"></textarea>
                     </div>
                     <button type="submit" class="btn btn-default">
                         <span class="glyphicon glyphicon-send"></span> Abschicken
@@ -325,7 +327,7 @@
             </form>
         </div>
 
-        <div class="col-md-offset-1 col-md-2">
+        <div class="col-md-offset-0 col-md-2 col-sm-offset-0 col-sm-2 hidden-xs">
             <img src="http://www.fonflatter.de/adv14/fredventskalender_or.jpg" alt="Banner">
         </div>
     </div>
@@ -334,27 +336,46 @@
 <nav class="navbar navbar-default navbar-fixed-bottom hidden-xs">
     <ul class="nav navbar-nav">
         <li>
-            <a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Fredshop</a>
+            <a href="#"><span class="glyphicon glyphicon-shopping-cart"></span><span class="hidden-sm"> Shop</span></a>
         </li>
         <li>
-            <a href="#"><span class="glyphicon glyphicon-gift"></span> Geschenke</a>
+            <a href="#"><span class="glyphicon glyphicon-gift"></span><span class="hidden-sm"> Geschenke</span></a>
         </li>
         <li>
-            <a href="#"><span class="glyphicon glyphicon-envelope"></span> Post</a>
+            <a href="#"><span class="glyphicon glyphicon-picture"></span><span class="hidden-sm"> Ausstellungen</span></a>
         </li>
         <li>
-            <a href="#"><span class="glyphicon glyphicon-paperclip"></span> Feed</a>
+            <a href="#"><span class="glyphicon glyphicon-film"></span><span class="hidden-sm"> Filme</span></a>
         </li>
         <li>
-            <a href="#"><span class="glyphicon glyphicon-info-sign"></span> Impressum</a>
+            <a href="#"><span class="glyphicon glyphicon-envelope"></span><span class="hidden-sm"> Post</span></a>
+        </li>
+        <li>
+            <a href="#"><span class="glyphicon glyphicon-info-sign"></span><span class="hidden-sm"> Impressum</span></a>
         </li>
     </ul>
 
+    <form id="search_form" class="navbar-form navbar-left" role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Suchen...">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+            </span>
+        </div>
+    </form>
+
     <ul class="nav navbar-nav navbar-right">
-        <li id="license" class="pull-right">
-            <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">
-                <img src="http://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC">
-                <small>BY-NC-ND 2.0</small>
+        <li>
+            <a class="svg-icon" href="#">
+                <img class="off" src="img/feed-icon-gray.svg" alt="Feed"/>
+                <img class="on" src="img/feed-icon.svg" alt="Feed"/>
+                <small class="hidden-sm">RSS</small>
+            </a>
+        </li>
+        <li id="license">
+            <a class="svg-icon" href="https://creativecommons.org/licenses/by-nc-nd/2.0/">
+                <img src="http://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC"/>
+                <small class="hidden-sm">BY-NC-ND 2.0</small>
             </a>
         </li>
     </ul>

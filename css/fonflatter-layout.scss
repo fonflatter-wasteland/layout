@@ -10,30 +10,51 @@ body {
     padding-bottom: $navbar-height;
 }
 
+img {
+    max-width: 100%;
+}
+
 .navbar-fixed-bottom .navbar-right {
-    padding-right: 1rem;
+    padding-right: 3rem;
 }
 
-#comic img {
-    height: auto;
+.navbar-right > li > a {
+    padding-left: $padding-small-vertical;
+    padding-right: $padding-small-vertical;
+    padding-top: (2 * $padding-small-vertical);
+}
+
+a.svg-icon > .on,
+a:hover.svg-icon > .off {
+    display: none;
+}
+
+a.svg-icon > .off,
+a:hover.svg-icon > .on {
+    display: inline;
+}
+
+a.svg-icon {
+    max-height: 1rem;
+}
+
+a.svg-icon img {
+    height: 2rem;
+}
+
+#comic_header, #comic {
     margin-bottom: 1rem;
-    width: 100%;
 }
 
-#comic, #comments {
-    margin-top: 4rem;
+#comic_footer {
+    margin-bottom: 4rem;
 }
 
-#license {
-    max-height: 1em;
-}
-
-#license img {
-    height: 2em;
+#license > a > img {
     opacity: 0.6;
 }
 
-#license a:hover img {
+#license > a:hover > img {
     opacity: 1;
 }
 
@@ -41,7 +62,6 @@ body {
     border: none;
     box-shadow: none;
     margin-left: 10%;
-    margin-top: 2em;
     width: 90%;
 }
 
@@ -63,4 +83,8 @@ body {
 
 #menu_archive .panel-body {
     padding: 0;
+}
+
+#search_form input {
+    width: 10rem;
 }
