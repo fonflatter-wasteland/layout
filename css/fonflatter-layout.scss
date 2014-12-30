@@ -7,7 +7,10 @@ a {
 }
 
 body {
-    bottom: ($navbar-height + $padding-small-vertical);
+    bottom: 0;
+    @media (min-width: $screen-sm-min) {
+        bottom: ($navbar-height + $padding-small-vertical);
+    }
     left:0;
     position:absolute;
     right:0;
