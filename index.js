@@ -9,4 +9,13 @@ app.get('/', function (req, res, next) {
     });
 });
 
+app.get('/error', function (req, res, next) {
+    var err = new Error("I’m a teapot");
+    err.status = 418;
+
+    res.render('error.html', {
+        error: err
+    });
+});
+
 app.listen(parseInt(process.env.PORT) || 62003);
