@@ -1,0 +1,26 @@
+{
+  "name": "fonflatter-layout",
+  "version": "1.0.0",
+  "description": "layout for fonflatter.de",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fonflatter/layout"
+  },
+  "author": "winniehell <git@winniehell.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fonflatter/layout/issues"
+  },
+  "homepage": "https://github.com/fonflatter/layout",
+  "dependencies": {
+    "nunjucks": "1.X"
+  },
+  "devDependencies": {
+    "express": "4.X",
+    "morgan": "1.X"
+  }
+}

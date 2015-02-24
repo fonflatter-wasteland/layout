@@ -1,0 +1,84 @@
+body {
+    font: 14px Helvetica, Arial, sans-serif;
+    padding: 1% 10%;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a, body {
+    color: #333333;
+}
+
+a .hover-show, a:hover .hover-hide {
+    display: none;
+}
+
+a .hover-hide, a:hover .hover-show {
+    display: inline;
+}
+
+#buttons {
+    padding-left: 40%;
+}
+
+#comic {
+    text-align: center;
+}
+
+#content {
+    display: block;
+    float: left;
+    width: 40%;
+}
+
+#content img {
+    max-width: 100%;
+}
+
+/* borrowed from http://getbootstrap.com/components/#alerts */
+.alert{
+    padding:15px;
+    margin-bottom:20px;
+    border:1px solid transparent;
+    border-radius:4px
+}
+
+.alert img {
+    vertical-align: middle;
+}
+
+/* borrowed from http://getbootstrap.com/components/#alerts */
+.alert-danger {
+    background-color: #F2DEDE;
+    border-color: #EBCCD1;
+    color: #A94442;
+}
+
+/* borrowed from http://getbootstrap.com/components/#alerts */
+.alert-success {
+    color: #3C763D;
+    background-color: #DFF0D8;
+    border-color: #D6E9C6;
+}
+
+label {
+    float: left;
+    width: 30%;
+}
+
+p {
+    clear: both;
+    text-align: justify;
+}
+
+#sidebar-left {
+    float: left;
+    margin-right: 2%;
+}
