@@ -6,17 +6,18 @@ var path = require('path');
 
 var app = express();
 
-nunjucks.configure(path.join(__dirname, 'views'), {
-    express: app,
-    autoescape: true
-});
-
 app.use(logger('dev'));
+
+app.locals.views = path.join(__dirname, 'views');
+
+var viewLoader = new nunjucks.FileSystemLoader(app.locals.views);
+var viewEnv = new nunjucks.Environment(viewLoader, {autoescape: true});
+viewEnv.express(app);
 
 app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/img', express.static(path.join(__dirname, 'img')));
 
-app.get('/', function(req, res, next) {
+app.get('/', function (req, res, next) {
     res.render('layout.html', {
         title: 'dummy page',
         content: 'dummy content'
