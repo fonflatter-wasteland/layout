@@ -17,11 +17,4 @@ viewEnv.express(app);
 app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/img', express.static(path.join(__dirname, 'img')));
 
-app.get('/', function (req, res, next) {
-    res.render('layout.html', {
-        title: 'dummy page',
-        content: 'dummy content'
-    });
-});
-
 module.exports = app;
