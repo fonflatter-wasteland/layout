@@ -1,19 +1,10 @@
 body {
-    font: 14px Helvetica, Arial, sans-serif;
     padding: 1% 10%;
 }
 
-a {
+a, a:hover {
+    color: #333;
     font-weight: bold;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-a, body {
-    color: #333333;
 }
 
 a .hover-show, a:hover .hover-hide {
@@ -42,30 +33,8 @@ a .hover-hide, a:hover .hover-show {
     max-width: 100%;
 }
 
-/* borrowed from http://getbootstrap.com/components/#alerts */
-.alert{
-    padding:15px;
-    margin-bottom:20px;
-    border:1px solid transparent;
-    border-radius:4px
-}
-
 .alert img {
     vertical-align: middle;
-}
-
-/* borrowed from http://getbootstrap.com/components/#alerts */
-.alert-danger {
-    background-color: #F2DEDE;
-    border-color: #EBCCD1;
-    color: #A94442;
-}
-
-/* borrowed from http://getbootstrap.com/components/#alerts */
-.alert-success {
-    color: #3C763D;
-    background-color: #DFF0D8;
-    border-color: #D6E9C6;
 }
 
 label {
@@ -81,4 +50,5 @@ p {
 #sidebar-left {
     float: left;
     margin-right: 2%;
+    text-align: center;
 }
