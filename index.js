@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
+var dummyText = require('lorem-ipsum');
 var app = require('./app');
 
 app.get('/', function (req, res, next) {
     res.render('layout.html', {
         title: 'dummy page',
-        content: 'dummy content'
+        content: dummyText({count: 10})
     });
 });
 
