@@ -1,6 +1,6 @@
 {
   "name": "fonflatter-layout",
-  "version": "1.0.0",
+  "version": "1.0.1-dev",
   "description": "layout for fonflatter.de",
   "private": true,
   "main": "index.js",
