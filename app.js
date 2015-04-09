@@ -1,20 +1,24 @@
-var express = require('express');
+module.exports = (function() {
+  'use strict';
 
-var logger = require('morgan');
-var nunjucks = require('nunjucks');
-var path = require('path');
+  var express = require('express');
 
-var app = express();
+  var logger = require('morgan');
+  var nunjucks = require('nunjucks');
+  var path = require('path');
 
-app.use(logger('dev'));
+  var app = express();
 
-app.locals.views = path.join(__dirname, 'views');
+  app.use(logger('dev'));
 
-var viewLoader = new nunjucks.FileSystemLoader(app.locals.views);
-var viewEnv = new nunjucks.Environment(viewLoader, {autoescape: true});
-viewEnv.express(app);
+  app.locals.views = path.join(__dirname, 'views');
 
-app.use('/css', express.static(path.join(__dirname, 'css')));
-app.use('/img', express.static(path.join(__dirname, 'img')));
+  var viewLoader = new nunjucks.FileSystemLoader(app.locals.views);
+  var viewEnv = new nunjucks.Environment(viewLoader, {autoescape: true});
+  viewEnv.express(app);
 
-module.exports = app;
+  app.use('/css', express.static(path.join(__dirname, 'css')));
+  app.use('/img', express.static(path.join(__dirname, 'img')));
+
+  return app;
+})();
