@@ -3,6 +3,14 @@
 (function() {
   'use strict';
 
+  var port = parseInt(process.env.PORT);
+
+  if (!port) {
+    var random = require('random-js')();
+    port = random.integer(62000, 62999);
+  }
+
   var app = require('./app-dev');
-  app.listen(parseInt(process.env.PORT) || 62003);
+  console.log('Running at http://localhost:' + port + '...');
+  app.listen(port);
 })();
