@@ -1,5 +1,5 @@
 {
-  "excludeFiles": ["node_modules/**"],
+  "excludeFiles": ["coverage/**", "node_modules/**"],
   "fileExtensions": [".js", "._js"],
   "preset": "node-style-guide"
 }

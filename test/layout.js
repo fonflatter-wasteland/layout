@@ -2,7 +2,8 @@ suite('layout', function() {
   'use strict';
 
   var request = require('supertest');
-  var app = require('./app');
+
+  var app = require('../app');
 
   test('with dummy content', function(next) {
     request(app)
