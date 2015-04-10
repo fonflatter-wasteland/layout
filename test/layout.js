@@ -5,23 +5,31 @@ suite('layout', function() {
 
   var app = require('../app');
 
-  test('with dummy content', function(next) {
+  test('dummy content', function(next) {
     request(app)
-      .get('/layout')
+      .get('/dummy')
       .expect(200)
       .expect(/dummy page/)
       .end(next);
   });
 
-  test('with error', function(next) {
+  test('error with status', function(next) {
     request(app)
-      .get('/error')
+      .get('/teapot-error')
       .expect(418)
       .expect(/I’m a teapot/)
       .end(next);
   });
 
-  test('with non-existent page', function(next) {
+  test('error without status', function(next) {
+    request(app)
+      .get('/error')
+      .expect(500)
+      .expect(/Custom error/)
+      .end(next);
+  });
+
+  test('non-existent page', function(next) {
     request(app)
       .get('/non-existent')
       .expect(404)

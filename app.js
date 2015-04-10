@@ -24,7 +24,7 @@ module.exports = (function() {
   if (app.get('env') !== 'production') {
     var dummyText = require('lorem-ipsum');
 
-    app.get('/layout', function(req, res, next) {
+    app.get('/dummy', function(req, res, next) {
       res.render('layout.html', {
         title: 'dummy page',
         content: dummyText({count: 10}),
@@ -32,6 +32,11 @@ module.exports = (function() {
     });
 
     app.get('/error', function(req, res, next) {
+      var err = new Error('Custom error');
+      next(err);
+    });
+
+    app.get('/teapot-error', function(req, res, next) {
       var err = new Error('I’m a teapot');
       err.status = 418;
       next(err);
