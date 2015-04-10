@@ -3,7 +3,7 @@
 (function() {
   'use strict';
 
-  var app = require('./app-dev');
+  var app = require('./app');
   var port = parseInt(process.env.PORT);
 
   if (port) {
