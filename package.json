@@ -5,7 +5,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "pretest": "jshint --extra-ext .js,._js . && jscs .",
+    "pretest": "npm-check && jshint --extra-ext .js,._js . && jscs .",
     "test": "NODE_ENV=test mocha --ui tdd"
   },
   "repository": {
@@ -28,6 +28,7 @@
     "lorem-ipsum": "^1.0.1",
     "mocha": "^2.2.1",
     "morgan": "^1.5",
+    "npm-check": "^3.2.10",
     "supertest": "^0.15.0"
   }
 }
