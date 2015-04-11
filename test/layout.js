@@ -1,6 +1,7 @@
 suite('layout', function() {
   'use strict';
 
+  var expect = require('chai').expect;
   var request = require('supertest');
 
   var app = require('../app');
@@ -35,5 +36,14 @@ suite('layout', function() {
       .expect(404)
       .expect(/Not Found/)
       .end(next);
+  });
+
+  test('reqistering app after layout', function() {
+    var express = require('express');
+    var parentApp = express();
+    parentApp.use(app);
+    expect(function() {
+      parentApp.use(express());
+    }).to.throw(/must be app.use\(\)d last/);
   });
 });

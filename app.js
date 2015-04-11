@@ -39,6 +39,10 @@ module.exports = (function() {
   app.use(fallbackHandler);
   app.use(errorHandler);
 
+  app.on('mount', function(parent) {
+    parent.use = noMoreHandlers;
+  });
+
   /**
    * Request handler throwing an error for testing.
    * @see teapotError
@@ -85,6 +89,15 @@ module.exports = (function() {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
+  }
+
+  /**
+   * Prevents registering further request handlers because
+   * {@link fallbackHandler} and {@link errorHandler} must be the last.
+   */
+  function noMoreHandlers() {
+    var config = require('./package.json');
+    throw new Error(config.name + ' must be app.use()d last!');
   }
 
   /**
