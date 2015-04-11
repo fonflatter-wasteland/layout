@@ -1,10 +1,17 @@
 suite('layout', function() {
   'use strict';
 
+  var express = require('express');
+
   var expect = require('chai').expect;
   var request = require('supertest');
 
-  var app = require('../app');
+  var dummy = require('../dummy');
+  var layout = require('../app');
+
+  var app = express();
+  app.use(dummy);
+  app.use(layout);
 
   test('dummy content', function(next) {
     request(app)
@@ -39,11 +46,8 @@ suite('layout', function() {
   });
 
   test('reqistering app after layout', function() {
-    var express = require('express');
-    var parentApp = express();
-    parentApp.use(app);
     expect(function() {
-      parentApp.use(express());
+      app.use(dummy);
     }).to.throw(/must be app.use\(\)d last/);
   });
 });

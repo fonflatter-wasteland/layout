@@ -3,7 +3,15 @@
 (function() {
   'use strict';
 
-  var app = require('./app');
+  var express = require('express');
+  var app = express();
+
+  var dummy = require('./dummy');
+  app.use(dummy);
+
+  var layout = require('./app');
+  app.use(layout);
+
   var port = parseInt(process.env.PORT);
 
   if (port) {

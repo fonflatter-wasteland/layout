@@ -6,7 +6,6 @@ module.exports = (function() {
   var logger = require('morgan');
   var nunjucks = require('nunjucks');
   var path = require('path');
-  var util = require('util');
 
   var app = express();
 
@@ -30,38 +29,12 @@ module.exports = (function() {
     app.use('/' + dir, express.static(path.join(__dirname, dir)));
   });
 
-  if (app.get('env') !== 'production') {
-    app.get('/dummy', dummyResponse);
-    app.get('/error', dummyError);
-    app.get('/teapot-error', teapotError);
-  }
-
   app.use(fallbackHandler);
   app.use(errorHandler);
 
   app.on('mount', function(parent) {
     parent.use = noMoreHandlers;
   });
-
-  /**
-   * Request handler throwing an error for testing.
-   * @see teapotError
-   */
-  function dummyError(req, res, next) {
-    var err = new Error('Custom error');
-    next(err);
-  }
-
-  /**
-   * Request handler retuning layout template with dummy text for testing.
-   */
-  function dummyResponse(req, res, next) {
-    var dummyText = require('lorem-ipsum');
-    res.render('layout.html', {
-      title: 'dummy page',
-      content: dummyText({count: 10}),
-    });
-  }
 
   /**
    * Handles all occurring errors by displaying error page and dumping stack
@@ -98,16 +71,6 @@ module.exports = (function() {
   function noMoreHandlers() {
     var config = require('./package.json');
     throw new Error(config.name + ' must be app.use()d last!');
-  }
-
-  /**
-   * Request handler throwing an error with HTTP status for testing.
-   * @see dummyError
-   */
-  function teapotError(req, res, next) {
-    var err = new Error('I’m a teapot');
-    err.status = 418;
-    next(err);
   }
 
   return app;
