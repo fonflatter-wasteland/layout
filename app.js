@@ -10,7 +10,11 @@ module.exports = (function() {
 
   var app = express();
 
-  app.use(logger('dev'));
+  if (app.get('env') === 'production') {
+    app.use(logger('short'));
+  } else {
+    app.use(logger('dev'));
+  }
 
   app.locals.views = path.join(__dirname, 'views');
 
