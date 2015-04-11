@@ -3,17 +3,10 @@ module.exports = (function() {
 
   var express = require('express');
 
-  var logger = require('morgan');
   var nunjucks = require('nunjucks');
   var path = require('path');
 
   var app = express();
-
-  if (app.get('env') === 'production') {
-    app.use(logger('short'));
-  } else {
-    app.use(logger('dev'));
-  }
 
   app.locals.views = path.join(__dirname, 'views');
 

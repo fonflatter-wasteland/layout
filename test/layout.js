@@ -4,12 +4,14 @@ suite('layout', function() {
   var express = require('express');
 
   var expect = require('chai').expect;
+  var logger = require('morgan');
   var request = require('supertest');
 
   var dummy = require('../dummy');
   var layout = require('../app');
 
   var app = express();
+  app.use(logger('dev'));
   app.use(dummy);
   app.use(layout);
 
