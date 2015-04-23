@@ -4,6 +4,7 @@ Express app containing the new layout of http://fonflatter.de
 
 [![Dependency Status](https://david-dm.org/fonflatter/layout.svg)](https://david-dm.org/fonflatter/layout)
 [![devDependency Status](https://david-dm.org/fonflatter/layout/dev-status.svg)](https://david-dm.org/fonflatter/layout#info=devDependencies)
+[![Dependency Status](https://www.versioneye.com/user/projects/553963511d2989cb78000042/badge.svg?style=flat)](https://www.versioneye.com/user/projects/553963511d2989cb78000042)
 
 [![Build Status](https://api.travis-ci.org/fonflatter/layout.svg)](https://travis-ci.org/fonflatter/layout)
 [![Build Status](https://drone.io/github.com/fonflatter/layout/status.png)](https://drone.io/github.com/fonflatter/layout/latest)
