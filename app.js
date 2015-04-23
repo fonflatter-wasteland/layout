@@ -23,29 +23,11 @@ module.exports = (function() {
   });
 
   app.use(fallbackHandler);
-  app.use(errorHandler);
+  app.use(require('./error-handler'));
 
   app.on('mount', function(parent) {
     parent.use = noMoreHandlers;
   });
-
-  /**
-   * Handles all occurring errors by displaying error page and dumping stack
-   * trace to log.
-   */
-  function errorHandler(err, req, res, next) {
-    console.error(err.stack);
-
-    if (err.status) {
-      res.status(err.status);
-    } else {
-      res.status(500);
-    }
-
-    res.render('error.html', {
-      message: err.message,
-    });
-  }
 
   /**
    * Handles every request which was not handled already by displaying

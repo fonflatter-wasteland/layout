@@ -21,6 +21,7 @@ module.exports = (function() {
   app.get('/dummy', dummyResponse);
   app.get('/error', dummyError);
   app.get('/teapot-error', teapotError);
+  app.use(require('./error-handler'));
 
   /**
    * Request handler throwing an error for testing.
