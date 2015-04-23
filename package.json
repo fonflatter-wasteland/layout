@@ -7,7 +7,7 @@
   "scripts": {
     "coverage": "coveralls < coverage/lcov.info",
     "pretest": "npm-check && jshint --extra-ext .js,._js . && jscs .",
-    "test": "NODE_ENV=test istanbul cover _mocha"
+    "test": "istanbul cover _mocha"
   },
   "repository": {
     "type": "git",
