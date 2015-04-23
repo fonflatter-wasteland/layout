@@ -1,7 +1,7 @@
 # http://www.appveyor.com/docs/appveyor-yml
 
 # version format
-version: {branch}.{build}
+version: "{branch}.{build}"
  
 # branches to build
 branches:
