@@ -34,16 +34,5 @@
     "morgan": "^1.5",
     "npm-check": "^3.2.10",
     "supertest": "^0.15.0"
-  },
-  "config": {
-    "blanket": {
-      "pattern": [
-        "app.js"
-      ],
-      "data-cover-never": [
-        "node_modules",
-        "test"
-      ]
-    }
   }
 }
