@@ -41,7 +41,7 @@ module.exports = (function() {
 
   /**
    * Prevents registering further request handlers because
-   * {@link fallbackHandler} and {@link errorHandler} must be the last.
+   * {@link fallbackHandler} must be the last.
    */
   function noMoreHandlers() {
     var config = require('./package.json');
