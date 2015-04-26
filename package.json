@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "coverage": "coveralls < coverage/lcov.info",
-    "pretest": "npm-check && jshint --extra-ext .js,._js . && jscs .",
+    "pretest": "npm-check && jshint . && jscs .",
     "test": "istanbul cover node_modules/mocha/bin/_mocha"
   },
   "repository": {
@@ -26,6 +26,7 @@
   "devDependencies": {
     "chai": "^2.3.0",
     "coveralls": "^2.11.2",
+    "fonflatter-error-handler": "git://github.com/fonflatter/error-handler.git#1.0.0-dev",
     "istanbul": "^0.3.13",
     "jscs": "^1.12.0",
     "jshint": "^2.7.0",

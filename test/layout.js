@@ -7,13 +7,21 @@ suite('layout', function() {
   var logger = require('morgan');
   var request = require('supertest');
 
-  var dummy = require('../dummy');
-  var layout = require('../app');
+  var app = require('../dummy');
 
-  var app = express();
-  app.use(logger('dev'));
-  app.use(dummy);
-  app.use(layout);
+  test('any image', function(next) {
+    request(app)
+      .get('/img/header_over.jpg')
+      .expect(200)
+      .end(next);
+  });
+
+  test('any stylesheet', function(next) {
+    request(app)
+      .get('/css/style.css')
+      .expect(200)
+      .end(next);
+  });
 
   test('dummy content', function(next) {
     request(app)
@@ -24,33 +32,4 @@ suite('layout', function() {
       .end(next);
   });
 
-  test('error with status', function(next) {
-    request(app)
-      .get('/teapot-error')
-      .expect(418)
-      .expect(/I’m a teapot/)
-      .end(next);
-  });
-
-  test('error without status', function(next) {
-    request(app)
-      .get('/error')
-      .expect(500)
-      .expect(/Custom error/)
-      .end(next);
-  });
-
-  test('non-existent page', function(next) {
-    request(app)
-      .get('/non-existent')
-      .expect(404)
-      .expect(/Not Found/)
-      .end(next);
-  });
-
-  test('reqistering app after layout', function() {
-    expect(function() {
-      app.use(dummy);
-    }).to.throw(/must be app.use\(\)d last/);
-  });
 });

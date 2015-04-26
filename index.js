@@ -35,12 +35,6 @@ module.exports = (function() {
   ].forEach(addAssetDirectory);
 
   app.setUpViews(app, path.join(__dirname, 'views'));
-  app.use(fallbackHandler);
-  app.use(require('./error-handler'));
-
-  app.on('mount', function(parent) {
-    parent.use = noMoreHandlers;
-  });
 
   /**
    * Serves static files in given directory.
@@ -49,25 +43,6 @@ module.exports = (function() {
    */
   function addAssetDirectory(dir) {
     app.use('/' + dir, express.static(path.join(__dirname, dir)));
-  }
-
-  /**
-   * Handles every request which was not handled already by displaying
-   * an error.
-   */
-  function fallbackHandler(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-  }
-
-  /**
-   * Prevents registering further request handlers because
-   * {@link fallbackHandler} must be the last.
-   */
-  function noMoreHandlers() {
-    var config = require('./package.json');
-    throw new Error(config.name + ' must be app.use()d last!');
   }
 
   return app;
