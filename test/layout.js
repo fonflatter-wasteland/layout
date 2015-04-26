@@ -19,7 +19,8 @@ suite('layout', function() {
     request(app)
       .get('/dummy')
       .expect(200)
-      .expect(/dummy page/)
+      .expect(/Dummy Page/)
+      .expect(/Dummy Content/)
       .end(next);
   });
 

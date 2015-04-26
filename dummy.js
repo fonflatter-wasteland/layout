@@ -10,24 +10,18 @@ module.exports = (function() {
 
   var app = express();
 
-  app.locals.views = [layout.locals.views,
-    path.join(__dirname, 'views'),
-  ];
+  layout.setUpViews(app, path.join(__dirname, 'dummyViews'));
 
-  var viewLoader = new nunjucks.FileSystemLoader(app.locals.views);
-  var viewEnv = new nunjucks.Environment(viewLoader, {autoescape: true});
-  viewEnv.express(app);
-
-  app.get('/dummy', dummyResponse);
-  app.get('/error', dummyError);
-  app.get('/teapot-error', teapotError);
+  app.get('/dummy', dummyPage);
+  app.get('/error', dummyErrorPage);
+  app.get('/teapot-error', teapotErrorPage);
   app.use(require('./error-handler'));
 
   /**
    * Request handler throwing an error for testing.
-   * @see teapotError
+   * @see teapotErrorPage
    */
-  function dummyError(req, res, next) {
+  function dummyErrorPage(req, res, next) {
     var err = new Error('Custom error');
     next(err);
   }
@@ -35,19 +29,19 @@ module.exports = (function() {
   /**
    * Request handler retuning layout template with dummy text for testing.
    */
-  function dummyResponse(req, res, next) {
+  function dummyPage(req, res, next) {
     var dummyText = require('lorem-ipsum');
-    res.render('layout.html', {
-      title: 'dummy page',
+    res.render('dummy.html', {
+      title: 'Dummy Page',
       content: dummyText({count: 10}),
     });
   }
 
   /**
    * Request handler throwing an error with HTTP status for testing.
-   * @see dummyError
+   * @see dummyErrorPage
    */
-  function teapotError(req, res, next) {
+  function teapotErrorPage(req, res, next) {
     var err = new Error('I’m a teapot');
     err.status = 418;
     next(err);

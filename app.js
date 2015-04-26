@@ -8,11 +8,29 @@ module.exports = (function() {
 
   var app = express();
 
-  app.locals.views = path.join(__dirname, 'views');
+  /**
+   * Intializes view engine for given app in given directory.
+   *
+   * @param app express app to intialize views for
+   * @param viewDir location of the views
+   */
+  app.setUpViews = function(app, viewDir) {
+    app.locals.views = viewDir;
 
-  var viewLoader = new nunjucks.FileSystemLoader(app.locals.views);
-  var viewEnv = new nunjucks.Environment(viewLoader, {autoescape: true});
-  viewEnv.express(app);
+    // add basic views for other apps
+    if (app !== this) {
+      app.locals.views = [this.locals.views,
+        app.locals.views,
+      ];
+    }
+
+    var viewLoader = new nunjucks.FileSystemLoader(app.locals.views);
+    var viewEnv = new nunjucks.Environment(viewLoader, {autoescape: true});
+
+    viewEnv.express(app);
+  };
+
+  app.setUpViews(app, path.join(__dirname, 'views'));
 
   var ASSET_DIRECTORIES = ['css',
     'img',
