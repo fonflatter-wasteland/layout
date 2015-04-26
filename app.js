@@ -30,22 +30,26 @@ module.exports = (function() {
     viewEnv.express(app);
   };
 
-  app.setUpViews(app, path.join(__dirname, 'views'));
-
-  var ASSET_DIRECTORIES = ['css',
+  ['css',
     'img',
-  ];
+  ].forEach(addAssetDirectory);
 
-  ASSET_DIRECTORIES.forEach(function(dir) {
-    app.use('/' + dir, express.static(path.join(__dirname, dir)));
-  });
-
+  app.setUpViews(app, path.join(__dirname, 'views'));
   app.use(fallbackHandler);
   app.use(require('./error-handler'));
 
   app.on('mount', function(parent) {
     parent.use = noMoreHandlers;
   });
+
+  /**
+   * Serves static files in given directory.
+   *
+   * @param dir location of static files
+   */
+  function addAssetDirectory(dir) {
+    app.use('/' + dir, express.static(path.join(__dirname, dir)));
+  }
 
   /**
    * Handles every request which was not handled already by displaying
