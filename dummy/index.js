@@ -6,7 +6,7 @@ module.exports = (function() {
   var logger = require('morgan');
   var path = require('path');
 
-  var errorHandler = require('fonflatter-error-handler/app');
+  var errorHandler = require('fonflatter-error-handler');
   var layout = require('..');
 
   var app = express();
