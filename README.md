@@ -13,3 +13,5 @@ Express app containing the new layout of http://fonflatter.de
 
 [![Coverage Status](https://coveralls.io/repos/fonflatter/layout/badge.svg?branch=1.0.1-dev)](https://coveralls.io/r/fonflatter/layout?branch=1.0.1-dev)
 [![Code Climate](https://codeclimate.com/github/fonflatter/layout/badges/gpa.svg)](https://codeclimate.com/github/fonflatter/layout)
+
+[![Stories in Progress](https://badge.waffle.io/fonflatter/layout.png?label=in%20progress&title=In%20Progress)](http://waffle.io/fonflatter/layout)
