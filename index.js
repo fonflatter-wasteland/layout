@@ -17,7 +17,7 @@ module.exports = (function() {
   app.setUpViews = function(app, viewDir) {
     app.locals.views = viewDir;
 
-    // add basic views for other apps
+    // Add basic views for other apps
     if (app !== this) {
       app.locals.views = [this.locals.views,
         app.locals.views,
