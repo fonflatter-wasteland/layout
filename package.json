@@ -5,7 +5,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "coverage": "coveralls < coverage/lcov.info",
+    "coverage": "coveralls < coverage/lcov.info && codecov < coverage/lcov.info",
     "pretest": "npm-check && jshint . && jscs .",
     "test": "istanbul cover node_modules/mocha/bin/_mocha"
   },
@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "chai": "^2.3.0",
+    "codecov.io": "^0.1.0",
     "coveralls": "^2.11.2",
     "fonflatter-error-handler": "git://github.com/fonflatter/error-handler.git#1.0.0-dev",
     "istanbul": "^0.3.13",
